@@ -1,0 +1,156 @@
+
+% v2-acmlarge-sample.tex, dated March 6 2012
+% This is a sample file for ACM large trim journals
+%
+% Compilation using 'acmlarge.cls' - version 1.3, Aptara Inc.
+% (c) 2011 Association for Computing Machinery (ACM)
+%
+% Questions/Suggestions/Feedback should be addressed to => "acmtexsupport@aptaracorp.com".
+% Users can also go through the FAQs available on the journal's submission webpage.
+%
+% Steps to compile: latex, bibtex, latex latex
+%
+
+\documentclass{article}
+% The file ijcai16.sty is the style file for IJCAI-16 (same as ijcai07.sty).
+\usepackage{xcolor}
+\definecolor{Brown}{cmyk}{0, 0.8, 1, 0.6}
+\newcommand\boldblue[1]{\textcolor{cyan}{\textbf{#1}}}
+\newcommand\boldred[1]{\textcolor{red}{\textbf{#1}}}
+\newcommand\boldbrown[1]{\textcolor{orange}{\textbf{#1}}}
+% Use the postscript times font!
+\usepackage{times}
+\usepackage{color}
+% the following package is optional:
+%\usepackage{latexsym}
+
+\newcommand{\QED}{\\ \ensuremath{\blacksquare}}
+\newcommand{\TheName}{\emph{De-Sparse}}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+  {
+      \theoremstyle{plain}
+      \newtheorem{assumption}{Assumption}
+      \newtheorem{theorem}{Theorem}
+      \newtheorem{mydef}{Definition}
+
+
+  }
+
+%\usepackage{balance}  % to better equalize the last page
+\usepackage{graphicx} % for EPS, load graphicx instead
+\usepackage{times}    % comment if you want LaTeX's default font
+\usepackage{url}      % llt: nicely formatted URLs
+\usepackage[lofdepth,lotdepth]{subfig}
+%\usepackage[pdftex]{hyperref}
+\usepackage{multirow}
+\usepackage{bbm}
+\usepackage{pseudocode}
+\usepackage{color}
+%\usepackage{cite}
+\usepackage{multirow}
+\usepackage{bbm}
+\usepackage{pseudocode}
+\usepackage{color}
+\usepackage{algpseudocode}
+\usepackage{booktabs}
+\begin{document}
+
+\begin{table*}
+\vspace{-0.14in}
+\caption{Performance Comparison on Four Binary Classification Benchmarks (50$\times$2 Training Samples, 200$\times$2 Testing Samples), where ``ACC.'' refers to accuracy and ``F1.'' refers to F1-Score. Note: numbers in \boldred{Red} refer to the largest values, \boldblue{Blue} refers to the second-largest values, and \boldbrown{Orange} refers to  the third-largest values.\vspace{-5mm}}
+		\label{tab:table11}
+\begin{center}
+\tiny{
+\begin{tabular}{*{12}{c}}
+\toprule
+     & \multicolumn{6}{c}{Data Source}\\
+    \cmidrule(lr){2-7}
+     &
+    \multicolumn{2}{c}{Adult1} &
+    \multicolumn{2}{c}{Adult2} &
+    \multicolumn{2}{c}{Adult3} &\\
+\cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+\cmidrule(lr){6-7}
+
+
+
+Parameter &\texttt{ACC.} & \texttt{F1.} &
+           \texttt{ACC.} & \texttt{F1.} &
+           \texttt{ACC.} & \texttt{F1.} \\
+
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){1-7}
+(Depth)& \multicolumn{6}{c}{Decision Tree}\\
+\cmidrule(lr){1-7}
+10.0&0.713 $\pm$ 0.071&0.705 $\pm$ 0.074&0.717 $\pm$ 0.104&0.712 $\pm$ 0.116&0.721 $\pm$ 0.050&0.707 $\pm$ 0.066\\
+20.0&0.686 $\pm$ 0.058&0.680 $\pm$ 0.080&0.696 $\pm$ 0.039&0.690 $\pm$ 0.054&0.698 $\pm$ 0.035&0.689 $\pm$ 0.044\\
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){1-7}
+& \multicolumn{6}{c}{LDA}\\
+\cmidrule(lr){1-7}
+&0.717 $\pm$ 0.056&0.710 $\pm$ 0.066&0.730 $\pm$ 0.062&0.719 $\pm$ 0.070&0.727 $\pm$ 0.052&0.722 $\pm$ 0.059\\
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){1-7}
+& \multicolumn{6}{c}{Two-Stage LDA}\\
+\cmidrule(lr){1-7}
+&0.757 $\pm$ 0.038&0.745 $\pm$ 0.034&0.761 $\pm$ 0.029&0.748 $\pm$ 0.037&\boldred{0.772} $\pm$ 0.055&\boldred{0.765} $\pm$ 0.058\\
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){1-7}
+($m,\lambda$)& \multicolumn{6}{c}{\emph{\textbf{AWDA}}}\\
+\cmidrule(lr){1-7}
+50,\ 1.0&\boldblue{0.764} $\pm$ 0.043&\boldred{0.750} $\pm$ 0.048&\boldred{0.766} $\pm$ 0.039&\boldblue{0.751} $\pm$ 0.035&\boldbrown{0.766} $\pm$ 0.027&\boldblue{0.753} $\pm$ 0.030\\
+50,\ 10.0&\boldbrown{0.763} $\pm$ 0.044&\boldblue{0.749} $\pm$ 0.048&0.763 $\pm$ 0.039&0.747 $\pm$ 0.036&0.765 $\pm$ 0.028&0.751 $\pm$ 0.032\\
+50,\ 100.0&\boldblue{0.764} $\pm$ 0.044&\boldblue{0.749} $\pm$ 0.046&0.763 $\pm$ 0.044&0.748 $\pm$ 0.041&0.765 $\pm$ 0.027&0.751 $\pm$ 0.032\\ 
+
+100,\ 1.0&0.762 $\pm$ 0.041&\boldbrown{0.748} $\pm$ 0.045&\boldred{0.766} $\pm$ 0.038&\boldred{0.752} $\pm$ 0.034&\boldbrown{0.766} $\pm$ 0.032&\boldblue{0.753} $\pm$ 0.035\\
+100,\ 10.0&\boldblue{0.764} $\pm$ 0.044&\boldred{0.750} $\pm$ 0.047&\boldbrown{0.764} $\pm$ 0.042&0.749 $\pm$ 0.039&0.765 $\pm$ 0.027&0.751 $\pm$ 0.032\\
+100,\ 100.0&\boldblue{0.764} $\pm$ 0.045&\boldblue{0.749} $\pm$ 0.047&\boldbrown{0.764} $\pm$ 0.042&0.749 $\pm$ 0.039&\boldbrown{0.766} $\pm$ 0.027&0.751 $\pm$ 0.032\\ 
+
+150,\ 1.0&\boldred{0.765} $\pm$ 0.043&\boldred{0.750} $\pm$ 0.047&\boldblue{0.765} $\pm$ 0.038&\boldbrown{0.750} $\pm$ 0.033&\boldblue{0.767} $\pm$ 0.026&\boldbrown{0.752} $\pm$ 0.031\\
+150,\ 10.0&\boldred{0.765} $\pm$ 0.044&\boldred{0.750} $\pm$ 0.048&0.763 $\pm$ 0.040&0.748 $\pm$ 0.037&\boldbrown{0.766} $\pm$ 0.027&\boldbrown{0.752} $\pm$ 0.032\\
+150,\ 100.0&\boldbrown{0.763} $\pm$ 0.045&\boldblue{0.749} $\pm$ 0.048&0.763 $\pm$ 0.043&0.747 $\pm$ 0.038&0.765 $\pm$ 0.028&0.751 $\pm$ 0.033\\ 
+
+200,\ 1.0&\boldblue{0.764} $\pm$ 0.042&\boldred{0.750} $\pm$ 0.046&\boldbrown{0.764} $\pm$ 0.039&0.749 $\pm$ 0.034&\boldbrown{0.766} $\pm$ 0.031&\boldbrown{0.752} $\pm$ 0.034\\
+200,\ 10.0&\boldblue{0.764} $\pm$ 0.044&\boldred{0.750} $\pm$ 0.045&\boldbrown{0.764} $\pm$ 0.040&0.749 $\pm$ 0.038&\boldbrown{0.766} $\pm$ 0.028&\boldbrown{0.752} $\pm$ 0.032\\
+200,\ 100.0&\boldblue{0.764} $\pm$ 0.044&\boldblue{0.749} $\pm$ 0.048&0.763 $\pm$ 0.042&0.748 $\pm$ 0.038&0.765 $\pm$ 0.027&0.751 $\pm$ 0.032\\ 	
+				
+
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){1-7}
+& \multicolumn{6}{c}{SVM-Linear}\\
+\cmidrule(lr){1-7}
+&0.748 $\pm$ 0.051&0.739 $\pm$ 0.066&0.759 $\pm$ 0.044&0.748 $\pm$ 0.047&0.751 $\pm$ 0.024&0.744 $\pm$ 0.037\\
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){1-7}
+(Band Width)& \multicolumn{6}{c}{SVM-Kernal (Gaussian)}\\
+\cmidrule(lr){1-7}
+0.1&0.569 $\pm$ 0.211&0.484 $\pm$ 0.363&0.578 $\pm$ 0.227&0.490 $\pm$ 0.319&0.541 $\pm$ 0.004&0.471 $\pm$ 0.233\\
+1.0&0.657 $\pm$ 0.084&0.716 $\pm$ 0.078&0.670 $\pm$0.121&0.643 $\pm$ 0.154&0.662 $\pm$ 0.110&0.652 $\pm$ 0.100\\
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){1-7}
+(Instance Number)& \multicolumn{6}{c}{AdaBoost}\\
+\cmidrule(lr){1-7}
+100.0&0.716 $\pm$ 0.069&0.674 $\pm$ 0.093&0.731 $\pm$0.064&0.681 $\pm$ 0.095&0.743 $\pm$ 0.050&0.696 $\pm$ 0.075\\
+200.0&0.728 $\pm$ 0.057&0.678 $\pm$ 0.089&0.733 $\pm$ 0.069&0.681 $\pm$ 0.100&0.737 $\pm$ 0.056&0.686 $\pm$ 0.085\\
+
+\bottomrule
+
+\end{tabular}
+}
+\end{center}
+\label{tab:main-result}
+\vspace{-5mm}
+\end{table*}
+
+\end{document}

@@ -1,0 +1,189 @@
+% v2-acmlarge-sample.tex, dated March 6 2012
+% This is a sample file for ACM large trim journals
+%
+% Compilation using 'acmlarge.cls' - version 1.3, Aptara Inc.
+% (c) 2011 Association for Computing Machinery (ACM)
+%
+% Questions/Suggestions/Feedback should be addressed to => "acmtexsupport@aptaracorp.com".
+% Users can also go through the FAQs available on the journal's submission webpage.
+%
+% Steps to compile: latex, bibtex, latex latex
+%
+
+\documentclass{article}
+% The file ijcai16.sty is the style file for IJCAI-16 (same as ijcai07.sty).
+%\usepackage{icml2017}
+
+% Use the postscript times font!
+\usepackage{times}
+%\usepackage{nips_2017}
+
+% the following package is optional:
+%\usepackage{latexsym}
+
+\newcommand{\QED}{\\ \ensuremath{\blacksquare}}
+\newcommand{\TheName}{$\mathcal{DBSDA}$}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+  {
+      \theoremstyle{plain}
+      \newtheorem{assumption}{Assumption}
+      \newtheorem{theorem}{Theorem}
+      \newtheorem{mydef}{Definition}
+
+
+  }
+
+%\usepackage{balance}  % to better equalize the last page
+\usepackage{graphicx} % for EPS, load graphicx instead
+\usepackage{times}    % comment if you want LaTeX's default font
+\usepackage{url}      % llt: nicely formatted URLs
+\usepackage[lofdepth,lotdepth]{subfig}
+%\usepackage[pdftex]{hyperref}
+\usepackage{multirow}
+\usepackage{bbm}
+\usepackage{pseudocode}
+\usepackage{color}
+%\usepackage{cite}
+\usepackage{multirow}
+\usepackage{bbm}
+\usepackage{pseudocode}
+\usepackage{color}
+%\usepackage{algpseudocode}
+\usepackage{booktabs}
+
+
+\begin{document}
+
+\begin{table*}
+\caption{Early Detection of Diseases Performance Comparison between \TheName\ and LDA Baselines (Testing Sample Size =$1000\times 2$), where ``ACC.'' refers to accuracy and ``F1.'' refers to F1-Score.}
+		\label{tab:table11}
+\begin{center}
+\scriptsize{
+\begin{tabular}{*{12}{c}}
+\toprule
+    & \multicolumn{7}{c}{\textbf{Training Set}}\\
+    \cmidrule(lr){2-8}
+    \textbf{Algorithm}& 
+    \multicolumn{1}{c}{100} &
+    \multicolumn{1}{c}{200} &
+    \multicolumn{1}{c}{300} &
+    \multicolumn{1}{c}{400} &
+     \multicolumn{1}{c}{500} &
+     \multicolumn{1}{c}{600} &
+     \multicolumn{1}{c}{700} \\
+
+
+
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){2-2}
+\cmidrule(lr){3-3}
+\cmidrule(lr){4-4}
+\cmidrule(lr){5-5}
+\cmidrule(lr){6-6}
+\cmidrule(lr){7-7}
+\cmidrule(lr){8-8}
+LDA&0.543$\pm$0.034&0.586$\pm$0.033&0.616$\pm$0.022&0.642$\pm$0.029&0.642$\pm$0.022&0.657$\pm$0.025&0.658$\pm$0.026\\
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){2-2}
+\cmidrule(lr){3-3}
+\cmidrule(lr){4-4}
+\cmidrule(lr){5-5}
+\cmidrule(lr){6-6}
+\cmidrule(lr){7-7}
+\cmidrule(lr){8-8}
+Ye-LDA&0.627$\pm$0.050&0.620$\pm$0.077&0.652$\pm$0.063&0.620$\pm$0.067&0.655$\pm$0.062&0.637$\pm$0.064&0.670$\pm$0.045\\
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){2-2}
+\cmidrule(lr){3-3}
+\cmidrule(lr){4-4}
+\cmidrule(lr){5-5}
+\cmidrule(lr){6-6}
+\cmidrule(lr){7-7}
+\cmidrule(lr){8-8}
+SDA&0.658$\pm$0.023&0.676$\pm$0.024&0.682$\pm$0.028&0.686$\pm$0.022&0.683$\pm$0.021&0.692$\pm$0.025&0.695$\pm$0.018\\
+
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){2-2}
+\cmidrule(lr){3-3}
+\cmidrule(lr){4-4}
+\cmidrule(lr){5-5}
+\cmidrule(lr){6-6}
+\cmidrule(lr){7-7}
+\cmidrule(lr){8-8}
+\textbf{\TheName} &\textbf{0.659$\pm$0.022}&\textbf{0.677$\pm$0.028}&\textbf{0.691$\pm$0.024}&\textbf{0.692$\pm$0.023}&\textbf{0.690$\pm$0.021}&\textbf{0.696$\pm$0.024}&\textbf{0.701$\pm$0.023}\\
+
+
+
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){2-2}
+\cmidrule(lr){3-3}
+\cmidrule(lr){4-4}
+\cmidrule(lr){5-5}
+\cmidrule(lr){6-6}
+\cmidrule(lr){7-7}
+\cmidrule(lr){8-8}
+Decision Tree&0.621$\pm$0.046&0.649$\pm$0.031&0.652$\pm$0.041&0.655$\pm$0.030&0.671$\pm$0.028&0.665$\pm$0.031&0.668$\pm$0.040\\
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){2-2}
+\cmidrule(lr){3-3}
+\cmidrule(lr){4-4}
+\cmidrule(lr){5-5}
+\cmidrule(lr){6-6}
+\cmidrule(lr){7-7}
+\cmidrule(lr){8-8}
+Linear SVM&0.615$\pm$0.026&0.628$\pm$0.030&0.647$\pm$0.023&0.666$\pm$0.029&0.666$\pm$0.021&0.670$\pm$0.030&0.675$\pm$0.029\\
+
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){2-2}
+\cmidrule(lr){3-3}
+\cmidrule(lr){4-4}
+\cmidrule(lr){5-5}
+\cmidrule(lr){6-6}
+\cmidrule(lr){7-7}
+\cmidrule(lr){8-8}
+Kernel SVM&0.635$\pm$0.032&0.669$\pm$0.027&0.674$\pm$0.039&0.678$\pm$0.021&0.668$\pm$0.038&0.688$\pm$0.024&0.682$\pm$0.029\\
+
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){2-2}
+\cmidrule(lr){3-3}
+\cmidrule(lr){4-4}
+\cmidrule(lr){5-5}
+\cmidrule(lr){6-6}
+\cmidrule(lr){7-7}
+\cmidrule(lr){8-8}
+AdaBoost&0.631$\pm$0.035&0.630$\pm$0.039&0.620$\pm$0.028&0.622$\pm$0.027&0.621$\pm$0.022&0.617$\pm$0.025&0.626$\pm$0.070\\
+
+
+
+\cmidrule(lr){1-1}
+\cmidrule(lr){2-2}
+\cmidrule(lr){3-3}
+\cmidrule(lr){4-4}
+\cmidrule(lr){5-5}
+\cmidrule(lr){6-6}
+\cmidrule(lr){7-7}
+\cmidrule(lr){8-8}
+Random Forest&0.590$\pm$0.035&0.602$\pm$0.035&0.653$\pm$0.031&0.602$\pm$0.040&0.674$\pm$0.024&0.666$\pm$0.026&0.658$\pm$0.032\\
+
+
+
+\bottomrule
+
+\end{tabular}
+}
+\end{center}
+\label{tab:main-result}
+\end{table*}
+
+\end{document}
