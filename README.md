@@ -1,4 +1,4 @@
-# 2017Jiang_Bian_ICDM_MultipartySDA
+# MultipartySDA
 First commit test
 
 # Multi-Party Sparse Discriminant Learning
